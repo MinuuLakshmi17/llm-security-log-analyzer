@@ -16,9 +16,13 @@
 
 ## Overview
 
+<p align="justify">
 Point this at your logs and it tells you what looks like an attack. The service ingests security events (file upload or single-event API), runs them through a two-layer detection engine, stores evidence-bearing alerts, and optionally asks an LLM to explain an alert and suggest next steps. A Streamlit dashboard gives analysts the SOC view: alert counts, severity breakdown, and one-click enrichment.
+</p>
 
-The core design decision: **the deterministic detection layer is authoritative and the LLM only enriches.** The model never decides what is malicious, and log content is treated as untrusted data throughout, so a malicious log line cannot become a prompt injection.
+<p align="justify">
+The core design decision: <strong>the deterministic detection layer is authoritative and the LLM only enriches.</strong> The model never decides what is malicious, and log content is treated as untrusted data throughout, so a malicious log line cannot become a prompt injection.
+</p>
 
 ## Features
 
@@ -109,7 +113,9 @@ LLM_API_KEY=sk-...
 LLM_MODEL=gpt-4o-mini
 ```
 
-Then `POST /api/v1/alerts/{id}/enrich`, or click **LLM Enrich** in the dashboard. The model receives the alert plus its evidence and returns a summary, recommendations, and a confidence score. It cannot change the verdict, and the prompt explicitly forbids obeying instructions found in log content.
+<p align="justify">
+Then <code>POST /api/v1/alerts/{id}/enrich</code>, or click <strong>LLM Enrich</strong> in the dashboard. The model receives the alert plus its evidence and returns a summary, recommendations, and a confidence score. It cannot change the verdict, and the prompt explicitly forbids obeying instructions found in log content.
+</p>
 
 ## HTTP API
 
@@ -165,7 +171,9 @@ docs/DESIGN.md         # design notes
 
 ## Scope
 
+<p align="justify">
 This is a graduate-level applied security project and reference implementation, not an enterprise SIEM. Production hardening would add PostgreSQL, a message queue for ingestion, async enrichment workers, alert dedup across restarts at scale, RBAC/SSO, and evaluation against labeled data with measured precision and recall.
+</p>
 
 ## License
 
