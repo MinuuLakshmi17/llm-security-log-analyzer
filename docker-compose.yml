@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    environment:
+      DATABASE_URL: sqlite:////data/security_analyzer.db
+      API_KEY: ${API_KEY:-change-me}
+      LLM_ENABLED: ${LLM_ENABLED:-false}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-gpt-4o-mini}
+    volumes: [analyzer-data:/data]
+    ports: ["8000:8000"]
+  dashboard:
+    build: .
+    command: streamlit run dashboard/app.py --server.address=0.0.0.0 --server.port=8501
+    environment: {API_URL: http://api:8000, API_KEY: ${API_KEY:-change-me}}
+    ports: ["8501:8501"]
+    depends_on: [api]
+volumes: {analyzer-data: {}}

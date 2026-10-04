@@ -1,0 +1,10 @@
+{"timestamp": "2026-01-15T10:00:00Z", "source": "auth01", "source_ip": "10.10.10.5", "user": "alice", "action": "login", "outcome": "failed", "service": "ssh", "message": "authentication failure"}
+{"timestamp": "2026-01-15T10:00:05Z", "source": "auth01", "source_ip": "10.10.10.5", "user": "alice", "action": "login", "outcome": "failed", "service": "ssh", "message": "authentication failure"}
+{"timestamp": "2026-01-15T10:00:10Z", "source": "auth01", "source_ip": "10.10.10.5", "user": "alice", "action": "login", "outcome": "failed", "service": "ssh", "message": "authentication failure"}
+{"timestamp": "2026-01-15T10:00:15Z", "source": "auth01", "source_ip": "10.10.10.5", "user": "alice", "action": "login", "outcome": "failed", "service": "ssh", "message": "authentication failure"}
+{"timestamp": "2026-01-15T10:00:20Z", "source": "auth01", "source_ip": "10.10.10.5", "user": "alice", "action": "login", "outcome": "failed", "service": "ssh", "message": "authentication failure"}
+{"timestamp": "2026-01-15T10:01:00Z", "source": "win01", "source_ip": "10.10.10.9", "user": "bob", "action": "process", "outcome": "success", "service": "powershell", "message": "powershell.exe -enc SQBFAFgA"}
+{"timestamp": "2026-01-15T10:02:00Z", "source": "fw01", "source_ip": "10.10.10.99", "user": null, "action": "network_scan", "outcome": "detected", "service": "firewall", "message": "port scan detected across 80 destinations"}
+{"timestamp": "2026-01-15T10:03:00Z", "source": "linux01", "source_ip": "10.10.10.7", "user": "bob", "action": "command", "outcome": "success", "service": "sudo", "message": "sudo user added to administrators"}
+{"timestamp": "2026-01-15T10:04:00Z", "source": "auth02", "source_ip": "203.0.113.20", "user": "carol", "action": "login", "outcome": "success", "service": "vpn", "message": "successful login for carol"}
+{"timestamp": "2026-01-15T10:20:00Z", "source": "auth02", "source_ip": "198.51.100.77", "user": "carol", "action": "login", "outcome": "success", "service": "vpn", "message": "successful login for carol"}
